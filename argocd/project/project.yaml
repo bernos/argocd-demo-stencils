@@ -1,27 +1,23 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: __name__
+  name: __name__ # {"$kpt-set":"name"}
   annotations:
     argocd.argoproj.io/sync-wave: "-2" # Ensure the namespace is created before the argo project
-
 ---
-
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: __name__
+  name: __name__ # {"$kpt-set":"name"}
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "-1" # Ensure argo project is created before any apps
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   description: description
   sourceRepos:
-    - '*'
-
+  - '*'
   destinations:
-    - namespace: __name__
-      server: https://kubernetes.default.svc
-
+  - namespace: __name__ # {"$kpt-set":"name"}
+    server: https://kubernetes.default.svc
