@@ -1,0 +1,40 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: web-service
+packageMetadata:
+  shortDescription: sample description
+openAPI:
+  definitions:
+    io.k8s.cli.setters.namespace:
+      x-k8s-cli:
+        setter:
+          name: namespace
+          value: __namespace__
+          required: true
+    io.k8s.cli.setters.name:
+      x-k8s-cli:
+        setter:
+          name: name
+          value: __name__
+          required: true
+    io.k8s.cli.setters.image:
+      x-k8s-cli:
+        setter:
+          name: image
+          value: __image__
+    io.k8s.cli.setters.port:
+      x-k8s-cli:
+        setter:
+          name: port
+          value: __port__
+    io.k8s.cli.setters.container-port:
+      x-k8s-cli:
+        setter:
+          name: container-port
+          value: __container-port__
+    io.k8s.cli.setters.replicas:
+      x-k8s-cli:
+        setter:
+          name: replicas
+          value: __replicas__

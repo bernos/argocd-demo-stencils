@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: __name__ # {"$kpt-set":"name"}
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: __project__ # {"$kpt-set":"project"}
+    server: https://kubernetes.default.svc
+  project: __project__ # {"$kpt-set":"project"}
+  source:
+    path: . # {"$kpt-set":"repo-path"}
+    repoURL: __repo__ # {"$kpt-set":"repo"}
+    targetRevision: HEAD # {"$kpt-set":"target-revision"}

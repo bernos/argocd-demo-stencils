@@ -1,6 +1,0 @@
-namespace: default
-name: web-service
-image: docker.io/kennethreitz/httpbin
-port: 8000
-containerPort: 80
-replicas: 1

@@ -1,0 +1,36 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: application
+packageMetadata:
+  shortDescription: sample description
+openAPI:
+  definitions:
+    io.k8s.cli.setters.name:
+      x-k8s-cli:
+        setter:
+          name: name
+          value: __name__
+          required: true
+    io.k8s.cli.setters.project:
+      x-k8s-cli:
+        setter:
+          name: project
+          value: __project__
+          required: true
+    io.k8s.cli.setters.repo:
+      x-k8s-cli:
+        setter:
+          name: repo
+          value: __repo__
+          required: true
+    io.k8s.cli.setters.repo-path:
+      x-k8s-cli:
+        setter:
+          name: repo-path
+          value: __repo-path__
+    io.k8s.cli.setters.target-revision:
+      x-k8s-cli:
+        setter:
+          name: target-revision
+          value: HEAD
