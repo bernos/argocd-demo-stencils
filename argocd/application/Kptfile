@@ -34,3 +34,13 @@ openAPI:
         setter:
           name: target-revision
           value: HEAD
+    io.k8s.cli.substitutions.destination-namespace:
+      x-k8s-cli:
+        substitution:
+          name: destination-namespace
+          pattern: ${project}-${name}
+          values:
+          - marker: ${project}
+            ref: '#/definitions/io.k8s.cli.setters.project'
+          - marker: ${name}
+            ref: '#/definitions/io.k8s.cli.setters.name'

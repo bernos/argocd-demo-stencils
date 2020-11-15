@@ -6,11 +6,11 @@ packageMetadata:
   shortDescription: sample description
 openAPI:
   definitions:
-    io.k8s.cli.setters.namespace:
+    io.k8s.cli.setters.project:
       x-k8s-cli:
         setter:
-          name: namespace
-          value: __namespace__
+          name: project
+          value: __project__
           required: true
     io.k8s.cli.setters.name:
       x-k8s-cli:
@@ -41,3 +41,13 @@ openAPI:
         setter:
           name: replicas
           value: "1"
+    io.k8s.cli.substitutions.namespace:
+      x-k8s-cli:
+        substitution:
+          name: namespace
+          pattern: ${project}-${name}
+          values:
+          - marker: ${project}
+            ref: '#/definitions/io.k8s.cli.setters.project'
+          - marker: ${name}
+            ref: '#/definitions/io.k8s.cli.setters.name'
