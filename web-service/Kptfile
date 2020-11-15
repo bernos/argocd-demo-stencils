@@ -28,16 +28,16 @@ openAPI:
       x-k8s-cli:
         setter:
           name: port
-          value: 8000
+          value: "8000"
     io.k8s.cli.setters.container-port:
       type: integer
       x-k8s-cli:
         setter:
           name: container-port
-          value: 80
+          value: "80"
     io.k8s.cli.setters.replicas:
       type: integer
       x-k8s-cli:
         setter:
           name: replicas
-          value: 1
+          value: "1"
