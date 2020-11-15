@@ -22,19 +22,19 @@ openAPI:
       x-k8s-cli:
         setter:
           name: image
-          value: __image__
+          value: docker.io/kennethreitz/httpbin 
     io.k8s.cli.setters.port:
       x-k8s-cli:
         setter:
           name: port
-          value: __port__
+          value: 8000
     io.k8s.cli.setters.container-port:
       x-k8s-cli:
         setter:
           name: container-port
-          value: __container-port__
+          value: 80
     io.k8s.cli.setters.replicas:
       x-k8s-cli:
         setter:
           name: replicas
-          value: __replicas__
+          value: 1
