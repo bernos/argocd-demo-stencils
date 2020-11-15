@@ -36,6 +36,7 @@ openAPI:
           name: container-port
           value: 80
     io.k8s.cli.setters.replicas:
+      type: integer
       x-k8s-cli:
         setter:
           name: replicas
