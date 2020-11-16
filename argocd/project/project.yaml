@@ -18,6 +18,3 @@ spec:
   description: description
   sourceRepos:
   - '*'
-  destinations:
-  - namespace: __name__ # {"$kpt-set":"name"}
-    server: https://kubernetes.default.svc
