@@ -6,7 +6,7 @@ packageMetadata:
   shortDescription: sample description
 openAPI:
   definitions:
-    io.k8s.cli.setters.name:
+    io.k8s.cli.setters.project:
       x-k8s-cli:
         setter:
           name: project
