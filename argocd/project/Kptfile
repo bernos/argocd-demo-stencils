@@ -9,6 +9,6 @@ openAPI:
     io.k8s.cli.setters.name:
       x-k8s-cli:
         setter:
-          name: name
-          value: __name__
+          name: project
+          value: unknown
           required: true
