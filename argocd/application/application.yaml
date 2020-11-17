@@ -21,3 +21,8 @@ spec:
     path: . # {"$kpt-set":"repo-path"}
     repoURL: __repo__ # {"$kpt-set":"repo"}
     targetRevision: HEAD # {"$kpt-set":"target-revision"}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
